@@ -1,9 +1,9 @@
 package data;
 
+import lombok.Data;
 import lombok.Value;
-import lombok.experimental.UtilityClass;
 
-@UtilityClass
+@Data
 public class DataHelper {
 
     public static UserInfo validUser() {
@@ -24,29 +24,24 @@ public class DataHelper {
         private String password;
     }
 
-    @Value
-    public static class VerifyInfo {
-        private String code;
+    private String code;
 
-        public static String getCorrectCode() {
-            return new String("12345");
-        }
-
-        public static String getIncorrectCode() {
-            return new String("54321");
-        }
+    public static String getCorrectCode() {
+        return new String("12345");
     }
 
-    @Value
-    public static class CardsInfo {
-        private String cardNumber;
-
-        public static String getCard1() {
-            return new String("5559 0000 0000 0001");
-        }
-
-        public static String getCard2() {
-            return new String("5559 0000 0000 0002");
-        }
+    public static String getIncorrectCode() {
+        return new String("54321");
     }
+
+    private String cardNumber;
+
+    public static String getCard1() {
+        return new String("5559 0000 0000 0001");
+    }
+
+    public static String getCard2() {
+        return new String("5559 0000 0000 0002");
+    }
+
 }

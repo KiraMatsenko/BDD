@@ -20,14 +20,11 @@ public class ReplenishObject {
         return new DashboardObject();
     }
 
-    public ReplenishObject inputSum(String sum) { // вводим сумму пополнения
+    public void inputSum(String sum) { // вводим сумму пополнения
         amount.setValue(sum);
-        return new ReplenishObject();
     }
 
-    public DashboardObject inputCard(String cardNumber) { // вводим номер карты с которой переводим средства
-        whereFrom.click();
+    public void inputCard(String cardNumber) { // вводим номер карты с которой переводим средства
         whereFrom.setValue(cardNumber);
-        return new DashboardObject();
     }
 }

@@ -37,7 +37,7 @@ public class DashboardObject {
         return Integer.parseInt(value);
     }
 
-    public DashboardObject replenish(){
+    public DashboardObject replenish() {
         new ReplenishObject().replenishButton();
         return new DashboardObject();
     }

@@ -12,8 +12,6 @@ import page.LoginObject;
 import page.ReplenishObject;
 import page.VerificationPage;
 
-import static com.codeborne.selenide.Selenide.$;
-
 public class Steps {
     private static LoginObject loginObject;
     private static DashboardObject dashboardObject;
@@ -38,7 +36,10 @@ public class Steps {
 
     @Когда("пользователь переводит {string} рублей с карты с номером {string} на свою 1 карту с главной страницы")
     public void replenishFromCard1ToCard2(String sum, String cardNumber) {
-        dashboardObject = dashboardObject.selectReplenish1().inputSum(sum).inputCard(cardNumber).replenish();
+        replenishObject = dashboardObject.selectReplenish1();
+        replenishObject.inputSum(sum);
+        replenishObject.inputCard(cardNumber);
+        replenishObject.replenishButton();
     }
 
     @Тогда("баланс его 1 карты из списка на главной странице должен стать {string} рублей.")
